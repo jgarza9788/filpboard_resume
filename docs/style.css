@@ -1,0 +1,82 @@
+/* @import url('https://fonts.googleapis.com/css?family=Cookie'); */
+
+
+:root{
+  --main-color: #1c9ded;
+
+}
+
+/* definition */
+
+@font-face {
+  font-family: CaskaydiaMonoNerdFontMono;
+  src: url('fonts/CascadiaMono/CaskaydiaMonoNerdFontMono-Regular.ttf') format('truetype');
+
+  /* src: url('fonts/EntezareZohoor2.eot?') format('☺'), */
+       /* url('fonts/EntezareZohoor2.woff') format('woff'), */
+       /* url('fonts/EntezareZohoor2.ttf') format('truetype'); */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+* {
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: 'CaskaydiaMonoNerdFontMono';
+  color: #797979;
+}
+
+body{
+  background-color: #000;
+  padding: 0.5rem;
+}
+
+.emptyline{
+  height: 1rem;
+  width: 100%;
+}
+
+.line_done{
+  border-radius: 1rem;
+  color: #fff;
+  animation: flashColor 1s ease forwards;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: #fff;
+}
+
+/* visited link */
+a:visited {
+  color: #fff;
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--main-color);
+}
+
+/* selected link */
+a:active {
+  color: var(--main-color);
+}
+
+
+@keyframes flashColor {
+  
+  /* 0% { background-color: #000; }
+  50% { background-color: var(--main-color); }
+  100% { background-color: #000; }  */
+ 
+
+  /* 0% { color: #000; } */
+  50% { color: var(--main-color); }
+  100% { color: #fff; }
+}
