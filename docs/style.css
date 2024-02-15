@@ -40,7 +40,9 @@
   font-family: 'CaskaydiaMonoNerdFontMono';
   /* font-family: 'FiraMono'; */
   /* font-family: 'ShureTechMono'; */
-  color: #797979;
+  /* color: #797979; */
+  color: #fff;
+  /* color: #afafaf; */
 }
 
 b{
@@ -62,7 +64,7 @@ body{
 .line_done{
   border-radius: 1rem;
   color: #fff;
-  animation: flashColor 1s ease forwards;
+  /* animation: flashColor 1s ease forwards; */
 }
 
 a{
