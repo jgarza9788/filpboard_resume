@@ -36,8 +36,9 @@
 
 
 * {
-  /* font-family: 'Courier New', Courier, monospace; */
-  font-family: 'CaskaydiaMonoNerdFontMono';
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  /* font-family: 'CaskaydiaMonoNerdFontMono'; */
   /* font-family: 'FiraMono'; */
   /* font-family: 'ShureTechMono'; */
   color: #797979;
@@ -62,7 +63,7 @@ body{
 .line_done{
   border-radius: 1rem;
   color: #fff;
-  animation: flashColor 1s ease forwards;
+  animation: flashColor 2s ease forwards;
 }
 
 a{
