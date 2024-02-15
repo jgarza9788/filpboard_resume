@@ -3,13 +3,13 @@
 
 :root{
   /* white */
-  --main-color: #fff;
+  /* --main-color: #fff; */
 
   /* Blue */
   /* --main-color: #1c9ded; */
 
   /* Matrix Green */
-  /* --main-color: #00ff15; */
+  --main-color: #00ff15;
 }
 
 /* definition */
@@ -97,7 +97,7 @@ a:active {
   /* 0% { color: #000; } */
   50% { 
     color: var(--main-color); 
-    text-shadow: 0 0 2rem var(--main-color); 
+    text-shadow: 0 0 5rem var(--main-color); 
   }
   90%{
     text-shadow: 0 0 0rem var(--main-color); 
