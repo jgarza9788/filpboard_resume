@@ -1,26 +1,5 @@
 
 
-String.prototype.replaceAt=function(index, replacement) {
-	let left;
-	let right;
-
-	if(this.substr(0,index) == undefined){
-		left = "";
-	}
-	else
-	{
-		left = this.substr(0,index);
-	}
-
-	if(this.substr(index + replacement.length) == undefined ){
-		right="";
-	}
-	else{
-		right = this.substr(index + replacement.length);
-	}
-	return left + replacement + right;
-}
-
 const splitFlapClasses = document.getElementsByClassName('splitflap');
 
 const speed_ms = 50;
@@ -127,4 +106,3 @@ function runUntilTrue() {
 	}
 }
 runUntilTrue();
-
