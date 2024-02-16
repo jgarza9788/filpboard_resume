@@ -1,5 +1,5 @@
 
-const splitFlapClasses = document.getElementsByClassName('splitflap');
+const matrixTextClasses = document.getElementsByClassName('matrix-text');
 var chars = null;
 
 // const speed_ms = 0;
@@ -52,7 +52,7 @@ function nextCharacter(num){
 }
 
 function setup(){
-	for (sfc of splitFlapClasses) {
+	for (sfc of matrixTextClasses) {
 		var text = sfc.getAttribute("text");
 
 		for (let i = 0; i < text.length; i++) 
