@@ -36,8 +36,9 @@
 
 
 * {
-  /* font-family: 'Courier New', Courier, monospace; */
-  font-family: 'CaskaydiaMonoNerdFontMono';
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  /* font-family: 'CaskaydiaMonoNerdFontMono'; */
   /* font-family: 'FiraMono'; */
   /* font-family: 'ShureTechMono'; */
   /* color: #797979; */
@@ -61,11 +62,6 @@ body{
   width: 100%;
 }
 
-/* .line_done{
-  border-radius: 1rem;
-  color: #fff;
-  animation: flashColor 1s ease forwards; 
-} */
 
 
 char{
@@ -111,7 +107,7 @@ a:active {
 /* @keyframes flashColor {
   50% { 
     color: var(--main-color); 
-    text-shadow: 0 0 2rem var(--main-color); 
+    text-shadow: 0 0 5rem var(--main-color); 
   }
   90%{
     text-shadow: 0 0 0rem var(--main-color); 
