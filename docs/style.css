@@ -3,13 +3,13 @@
 
 :root{
   /* white */
-  --main-color: #fff;
+  /* --main-color: #fff; */
 
   /* Blue */
   /* --main-color: #1c9ded; */
 
   /* Matrix Green */
-  /* --main-color: #00ff15; */
+  --main-color: #00ff15;
 }
 
 /* definition */
@@ -45,11 +45,11 @@
   /* color: #afafaf; */
 }
 
-b{
+/* b{
   color: var(--main-color);
   text-shadow: 0 0 0.5rem var(--main-color); 
   opacity: 0.8;
-}
+} */
 
 body{
   background-color: #000;
@@ -61,11 +61,27 @@ body{
   width: 100%;
 }
 
-.line_done{
+/* .line_done{
   border-radius: 1rem;
   color: #fff;
-  /* animation: flashColor 1s ease forwards; */
+  animation: flashColor 1s ease forwards; 
+} */
+
+
+char{
+  color: var(--main-color);
+  /* color: #fff; */
+  text-shadow: 0 0 0.25rem var(--main-color); 
+
+  transition: all 1s ease;
 }
+
+.char-done{
+  color: #fff;
+  text-shadow: 0 0 0rem #000;
+}
+
+
 
 a{
   text-decoration: none;
@@ -92,11 +108,7 @@ a:active {
 }
 
 
-@keyframes flashColor {
-  
-
-
-  /* 0% { color: #000; } */
+/* @keyframes flashColor {
   50% { 
     color: var(--main-color); 
     text-shadow: 0 0 2rem var(--main-color); 
@@ -108,4 +120,4 @@ a:active {
      color: #fff; 
      text-shadow: none;
     }
-}
+} */
