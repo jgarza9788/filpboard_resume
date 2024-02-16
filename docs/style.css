@@ -54,7 +54,7 @@
 
 body{
   background-color: #000;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .emptyline{
@@ -69,7 +69,7 @@ char{
   /* color: #fff; */
   text-shadow: 0 0 0.25rem var(--main-color); 
 
-  transition: all 1s ease;
+  transition: all 1.5s ease-out;
 }
 
 .char-done{
