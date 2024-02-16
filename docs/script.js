@@ -1,108 +1,144 @@
 
-
 const splitFlapClasses = document.getElementsByClassName('splitflap');
+var chars = null;
 
-const speed_ms = 50;
-const chance = 0.90;
+// const speed_ms = 0;
+var speed_ms = 0;
+var char_load = 50;
+var increment_char_load = 2;
+var max_char_load = 500;
 
-function getRandomString(length){
-
-  var result = ''
-  // var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!8182510647$%^&*(),./;[]<>?:{}+=-_';
-  var characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω.,!?@#$%^&*()-_=+[]{};:|/<>`~€£¥₹©®™'
-//   var characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω.,!?@#$%^&*()-_=+[]{};:|/`~€£¥₹©®™'
-
-  for ( var i = 0; i < length; i++ ) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
- }
- return result;
+function endAnimation(){
+	chars = document.getElementsByTagName('char');
+	for (c of chars) {
+		c.innerText = c.getAttribute("char");
+		c.classList.add("char-done");
+	}
 }
-	
+
+
+const body = document.querySelector('body');
+body.addEventListener("dblclick", (event) => {
+
+	console.log('double click start');
+
+	endAnimation();
+
+	console.log('end');
+});
+
+
+var mylatesttap;
+function doubletap() {
+
+	var now = new Date().getTime();
+	var timesince = now - mylatesttap;
+	if((timesince < 600) && (timesince > 0))
+	{
+		endAnimation(); 
+	}
+
+	mylatesttap = new Date().getTime();
+
+}
+
+
+
+
+function nextCharacter(num){
+	var characters = ' █▓▒░abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@%*[]{}_-.’ ';
+	// console.log(num%characters.length)
+	return characters[num%(characters.length)];
+}
+
 function setup(){
 	for (sfc of splitFlapClasses) {
-
 		var text = sfc.getAttribute("text");
-		sfc.innerText = getRandomString(text.length);
 
+		for (let i = 0; i < text.length; i++) 
+		{
+			var char = document.createElement("char");
+			char.innerText = " ";
+			char.setAttribute("char",text[i]);
+			char.setAttribute("num",0);
+
+			sfc.appendChild(char);
+
+		}
+		
 	}
 }
 setup();
 
-function replaceAt(str, index, replacement) {
-	// console.log(replacement);
-	if (index >= str.length) return str; // Index out of bounds
-	return str.substr(0, index) + replacement + str.substr(index + 1);
-}
+// console.log(chars);
+
 
 function transitionText(){
-	console.log("transitionText");
-
+	// console.log("transitionText");
+	chars = document.getElementsByTagName('char');
+	
 	var result = true;
-	for (sfc of splitFlapClasses) {
+	var char_count = 0;
+	for (c of chars) {
 
+		var char = c.getAttribute("char");
+		var iText = c.innerText;
+		var num = parseInt(c.getAttribute("num"));
+		num += 1;
 
-		var text = sfc.getAttribute("text");
-		var curText = sfc.innerText;
-		
-		
-		// var curText = sfc.innerHTML.replace('<b>', '').replace('</b>', '');
-		// console.log(sfc.innerHTML);
-
-		console.log(curText);
-		console.log(text);
-		if (curText == text)
+		if (char == iText)
 		{
-		console.log('true');
-		sfc.classList.add("line_done");
-		continue;
+			c.classList.add("char-done");
+			continue;
+		}
+
+		result = false;
+		
+		char_count += 1
+		if (char_count > char_load)
+		{
+			break;
+		}
+
+		if (num < 80)
+		{
+			c.innerText = nextCharacter(num);
 		}
 		else
 		{
-		result = false;
-		console.log('false');
+			c.innerText = char;
 		}
+		
+		c.setAttribute("num",num);
 
+	} 
+	
+	char_load += increment_char_load;
+	char_load = Math.min(char_load,max_char_load);
 
-		for (let i = 0; i < text.length; i++) 
-		{
-			if (curText[i] == text[i])
-			{
-				continue;
-			}
-			
-			if (Math.random() > chance)
-			{
-				curText = replaceAt(curText,i,text[i]);
-			}
-			else
-			{
-				// console.log(curText);
-				curText = replaceAt(curText,i, getRandomString(1) );
-				// curText = replaceAt(curText,i, getRandomString(1) );
-				// console.log(curText);
-			}
-		}
-
-		console.log(curText);
-		sfc.innerText = curText;
-		// sfc.innerHTML = curText;
-
-	}
-
+	console.log(char_load);
 	return result;
 }
-transitionText();
+// transitionText();
 
 function runUntilTrue() {
 	// Simulate a condition that might eventually return true
 	var result = transitionText(); // Adjust the probability as needed
-	console.log(result);
+	// console.log(result);
 
 	if (result) {
 		console.log("Function returned true, stopping.");
 	} else {
-		console.log("Function returned false, running again after 0.5 seconds.");
-		setTimeout(runUntilTrue, speed_ms); // Wait for 500 milliseconds before trying again
+		console.log("Function returned false, running again after 0.0 seconds.");
+		
+		// if (speed_ms > 0)
+		// {
+		// 	speed_ms -= 2;
+		// }
+
+		// speed_ms -= 2;
+		setTimeout(runUntilTrue, speed_ms); // Wait for 0 milliseconds before trying again
 	}
 }
 runUntilTrue();
+
