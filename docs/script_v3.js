@@ -4,9 +4,9 @@ var chars = null;
 
 // const speed_ms = 0;
 var speed_ms = 0;
-var char_load = 10;
-var increment_char_load = 1;
-var max_char_load = 250;
+var char_load = 50;
+var increment_char_load = 2;
+var max_char_load = 500;
 
 function endAnimation(){
 	chars = document.getElementsByTagName('char');

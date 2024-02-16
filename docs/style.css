@@ -19,8 +19,8 @@
   font-family: CaskaydiaMonoNerdFontMono;
   src: url('fonts/CascadiaMono/CaskaydiaMonoNerdFontMono-Regular.ttf') format('truetype');
 
-  /* font-family: FiraMono;
-  src: url('fonts/FiraMono/FiraMonoNerdFontMono-Regular.otf') format('opentype'); */
+  font-family: FiraMono;
+  src: url('fonts/FiraMono/FiraMonoNerdFontMono-Regular.otf') format('opentype');
 
   /* font-family: ShureTechMono;
   src: url('fonts/ShareTechMono/ShureTechMonoNerdFontMono-Regular.ttf') format('truetype'); */
@@ -38,6 +38,7 @@
 * {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  /* font-weight: 100; */
   /* font-family: 'CaskaydiaMonoNerdFontMono'; */
   /* font-family: 'FiraMono'; */
   /* font-family: 'ShureTechMono'; */
@@ -55,6 +56,11 @@
 body{
   background-color: #000;
   padding: 1rem;
+
+  overflow-wrap: normal;
+  overflow-wrap: break-word;
+
+  min-height: 100vh;
 }
 
 .emptyline{
@@ -67,17 +73,32 @@ body{
 char{
   color: var(--main-color);
   /* color: #fff; */
-  text-shadow: 0 0 0.25rem var(--main-color); 
+  text-shadow: 0 0 1rem var(--main-color); 
 
-  transition: all 1.5s ease-out;
+  transition: all 2s ease-out;
 }
 
 .char-done{
   color: #fff;
-  text-shadow: 0 0 0rem #000;
+  text-shadow: 0 0 0rem var(--main-color); 
+
+  /* animation: flashColor 5s ease-out; */
 }
 
-
+@keyframes flashColor {
+  0% {
+    /* background-color: rgba(0, 0, 0, 0); */
+    text-shadow: 0 0 0rem var(--main-color); 
+  }
+  50% { 
+    /* background-color: var(--main-color); */
+    text-shadow: 0 0 5rem var(--main-color); 
+  }
+  100% {
+     /* background-color: rgba(0, 0, 0, 0); */
+     text-shadow: 0 0 0rem var(--main-color); 
+  }
+}
 
 a{
   text-decoration: none;
@@ -104,16 +125,3 @@ a:active {
 }
 
 
-/* @keyframes flashColor {
-  50% { 
-    color: var(--main-color); 
-    text-shadow: 0 0 5rem var(--main-color); 
-  }
-  90%{
-    text-shadow: 0 0 0rem var(--main-color); 
-  }
-  100% {
-     color: #fff; 
-     text-shadow: none;
-    }
-} */
