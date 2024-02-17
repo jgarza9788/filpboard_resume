@@ -75,53 +75,79 @@ char{
   /* color: #fff; */
   text-shadow: 0 0 1rem var(--main-color); 
 
+  /* text-shadow: 
+  -0.1rem 0 1rem var(--main-color),
+  0 0 1rem var(--main-color),
+  0.1rem 0 1rem var(--main-color)
+  ;  */
+
   transition: all 2s ease-out;
 }
 
 .char-done{
   color: #fff;
   text-shadow: 0 0 0rem var(--main-color); 
+  /* transition: all 10s ease-out; */
 
+  /* transition: all 0s ease-out; */
   /* animation: flashColor 5s ease-out; */
 }
 
-@keyframes flashColor {
-  0% {
-    /* background-color: rgba(0, 0, 0, 0); */
-    text-shadow: 0 0 0rem var(--main-color); 
-  }
-  50% { 
-    /* background-color: var(--main-color); */
-    text-shadow: 0 0 5rem var(--main-color); 
-  }
-  100% {
-     /* background-color: rgba(0, 0, 0, 0); */
-     text-shadow: 0 0 0rem var(--main-color); 
-  }
+
+.char-done:hover{
+
+  /* text-shadow: 
+  -0.4rem 0 1rem var(--main-color),
+  -0.3rem 0 1rem var(--main-color),
+  -0.2rem 0 1rem var(--main-color),
+  -0.1rem 0 1rem var(--main-color),
+  0rem 0 1rem var(--main-color),
+  0.1rem 0 1rem var(--main-color),
+  0.2rem 0 1rem var(--main-color),
+  0.3rem 0 1rem var(--main-color),
+  0.4rem 0 1rem var(--main-color)
+  ;  */
+
+  text-shadow: 
+  -0.1rem 0 1rem var(--main-color),
+  0 0 1rem var(--main-color),
+  0.1rem 0 1rem var(--main-color)
+  ; 
+
+  transition: all 0s ease-out;
 }
+
+
+
+
 
 a{
   text-decoration: none;
 }
 
 /* unvisited link */
-a:link {
+/* a:link {
   color: #fff;
-}
+} */
 
 /* visited link */
-a:visited {
+/* a:visited {
   color: #fff;
-}
+} */
 
 /* mouse over link */
+/*
 a:hover {
   color: var(--main-color);
 }
+*/
+
+
+
 
 /* selected link */
-a:active {
+/* a:active {
   color: var(--main-color);
-}
+} */
 
 
