@@ -3,13 +3,13 @@
 
 :root{
   /* white */
-  --main-color: #fff;
+  /* --main-color: #fff; */
 
   /* Blue */
   /* --main-color: #1c9ded; */
 
   /* Matrix Green */
-  /* --main-color: #00ff15; */
+  --main-color: #00ff15;
 }
 
 /* definition */
@@ -19,8 +19,8 @@
   font-family: CaskaydiaMonoNerdFontMono;
   src: url('fonts/CascadiaMono/CaskaydiaMonoNerdFontMono-Regular.ttf') format('truetype');
 
-  /* font-family: FiraMono;
-  src: url('fonts/FiraMono/FiraMonoNerdFontMono-Regular.otf') format('opentype'); */
+  font-family: FiraMono;
+  src: url('fonts/FiraMono/FiraMonoNerdFontMono-Regular.otf') format('opentype');
 
   /* font-family: ShureTechMono;
   src: url('fonts/ShareTechMono/ShureTechMonoNerdFontMono-Regular.ttf') format('truetype'); */
@@ -36,8 +36,10 @@
 
 
 * {
-  /* font-family: 'Courier New', Courier, monospace; */
-  font-family: 'CaskaydiaMonoNerdFontMono';
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  /* font-weight: 100; */
+  /* font-family: 'CaskaydiaMonoNerdFontMono'; */
   /* font-family: 'FiraMono'; */
   /* font-family: 'ShureTechMono'; */
   /* color: #797979; */
@@ -45,15 +47,20 @@
   /* color: #afafaf; */
 }
 
-b{
+/* b{
   color: var(--main-color);
   text-shadow: 0 0 0.5rem var(--main-color); 
   opacity: 0.8;
-}
+} */
 
 body{
   background-color: #000;
-  padding: 2rem;
+  padding: 1rem;
+
+  overflow-wrap: normal;
+  overflow-wrap: break-word;
+
+  min-height: 100vh;
 }
 
 .emptyline{
@@ -61,51 +68,77 @@ body{
   width: 100%;
 }
 
-.line_done{
-  border-radius: 1rem;
-  color: #fff;
-  /* animation: flashColor 1s ease forwards; */
+
+
+char{
+  color: var(--main-color);
+  /* color: #fff; */
+  text-shadow: 0 0 1rem var(--main-color); 
+
+  /* text-shadow: 
+  -0.1rem 0 1rem var(--main-color),
+  0 0 1rem var(--main-color),
+  0.1rem 0 1rem var(--main-color)
+  ;  */
+
+  transition: all 2s ease-out;
 }
+
+.char-done{
+  color: #fff;
+  text-shadow: 0 0 0rem var(--main-color); 
+  /* transition: all 10s ease-out; */
+
+  /* transition: all 0s ease-out; */
+  /* animation: flashColor 5s ease-out; */
+}
+
+
+.char-done:hover{
+
+  /* text-shadow: 
+  -0.4rem 0 1rem var(--main-color),
+  -0.3rem 0 1rem var(--main-color),
+  -0.2rem 0 1rem var(--main-color),
+  -0.1rem 0 1rem var(--main-color),
+  0rem 0 1rem var(--main-color),
+  0.1rem 0 1rem var(--main-color),
+  0.2rem 0 1rem var(--main-color),
+  0.3rem 0 1rem var(--main-color),
+  0.4rem 0 1rem var(--main-color)
+  ;  */
+
+  text-shadow: 
+  -0.1rem 0 1rem var(--main-color),
+  0 0 1rem var(--main-color),
+  0.1rem 0 1rem var(--main-color)
+  ; 
+
+  transition: all 0s ease-out;
+}
+
+
 
 a{
   text-decoration: none;
-}
-
-/* unvisited link */
-a:link {
-  color: #fff;
-}
-
-/* visited link */
-a:visited {
-  color: #fff;
-}
-
-/* mouse over link */
-a:hover {
-  color: var(--main-color);
-}
-
-/* selected link */
-a:active {
-  color: var(--main-color);
-}
-
-
-@keyframes flashColor {
   
-
-
-  /* 0% { color: #000; } */
-  50% { 
-    color: var(--main-color); 
-    text-shadow: 0 0 2rem var(--main-color); 
-  }
-  90%{
-    text-shadow: 0 0 0rem var(--main-color); 
-  }
-  100% {
-     color: #fff; 
-     text-shadow: none;
-    }
 }
+
+
+/* i don't know what to do with hover links */
+a div:hover{
+  /* background-color: var(--main-color); */
+  /* filter: blur(1rem); */
+
+  /* background: radial-gradient(circle, var(--main-color) 0%, rgba(0,0,0,0) 100%); */
+
+  
+  /* background: linear-gradient(90deg,rgba(0,0,0,0) 0%, var(--main-color) 0.25rem, rgba(0,0,0,0) 0.5rem); */
+  /* background: radial-gradient(circle,rgba(0,0,0,0) 0%, var(--main-color) 0.25rem, rgba(0,0,0,0) 0.5rem); */
+  /* border-radius: 0.25rem; */
+  /* filter: blur(1px); */
+}
+
+
+
+
