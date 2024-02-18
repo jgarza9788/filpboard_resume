@@ -96,18 +96,6 @@ char{
 
 .char-done:hover{
 
-  /* text-shadow: 
-  -0.4rem 0 1rem var(--main-color),
-  -0.3rem 0 1rem var(--main-color),
-  -0.2rem 0 1rem var(--main-color),
-  -0.1rem 0 1rem var(--main-color),
-  0rem 0 1rem var(--main-color),
-  0.1rem 0 1rem var(--main-color),
-  0.2rem 0 1rem var(--main-color),
-  0.3rem 0 1rem var(--main-color),
-  0.4rem 0 1rem var(--main-color)
-  ;  */
-
   text-shadow: 
   -0.1rem 0 1rem var(--main-color),
   0 0 1rem var(--main-color),
