@@ -44,10 +44,8 @@ function doubletap() {
 
 
 
-
+var characters = ' █▓▒░abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@%*[]{}_-.’ ';
 function nextCharacter(num){
-	var characters = ' █▓▒░abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@%*[]{}_-.’ ';
-	// console.log(num%characters.length)
 	return characters[num%(characters.length)];
 }
 
@@ -100,7 +98,7 @@ function transitionText(){
 			break;
 		}
 
-		if (num < 80)
+		if (num < characters.length)
 		{
 			c.innerText = nextCharacter(num);
 		}
